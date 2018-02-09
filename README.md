@@ -2,7 +2,7 @@
 
 # Project Roles
 
-Almighty Team Leader:
+Almighty Team Leader: Dan
 
   UI
   - Manager: Owen
