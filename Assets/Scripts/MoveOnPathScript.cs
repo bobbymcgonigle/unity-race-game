@@ -13,8 +13,7 @@ public class MoveOnPathScript : MonoBehaviour {
     public int CurrentWayPointID = 0;
     public float speed;
     private float reachDistance = 1.0f;     //dist btween ball and point in path, longer it is, the smoother
-    public float roationSpeed = 0.5f;       //speed we're rotation to face next point
-    public string pathName;                 //with name, we're choosing path to follow
+    public float rotationSpeed = 1.0f;           //with name, we're choosing path to follow
 
     Vector3 lastPosition;
     Vector3 currentPostion;
@@ -48,7 +47,12 @@ public class MoveOnPathScript : MonoBehaviour {
         }
         float distance = Vector3.Distance(currentPath.path_objs[CurrentWayPointID].position, transform.position);
         transform.position = Vector3.MoveTowards(transform.position, currentPath.path_objs[CurrentWayPointID].position, Time.deltaTime*speed);
-        if(distance <= reachDistance) CurrentWayPointID++;      //when current position is met, move on to next point
+
+
+        var rotation = Quaternion.LookRotation(currentPath.path_objs[CurrentWayPointID].position - transform.position);
+        if(!rotation.Equals(Quaternion.Euler(0,0,0))) transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+
+        if (distance <= reachDistance) CurrentWayPointID++;      //when current position is met, move on to next point
         if (CurrentWayPointID >= currentPath.path_objs.Count) CurrentWayPointID = 0;
         
     }
