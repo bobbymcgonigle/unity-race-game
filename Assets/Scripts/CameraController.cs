@@ -12,11 +12,15 @@ public class CameraController : MonoBehaviour {
 	void Start () 
 	{
 		offset = transform.position - Player.transform.position;
+		//offset is the distance between player and camera each frame
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () 
 	{
+		
 		transform.position = Player.transform.position + offset;
+		//offset is updated each frame by taking the players position and adding the previously calculated offset
+		//this sets the cameras position so it is alwasy folling the player by a certain offset
 	}
 }
