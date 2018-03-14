@@ -9,28 +9,30 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.089 seconds
+- Completed reload, in  0.082 seconds
 Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Public\Documents\Unity Projects\unity-race-game\runAllTest_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 6.298899 ms
+The referenced script on this Behaviour (Game Object 'level') is missing!
+ 
+(Filename:  Line: 1744)
+
+UnloadTime: 7.557709 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3184 -> priority: 1 
-  Thread -> id: 460c -> priority: 1 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 20.489988 ms
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 290.
-Total: 0.793324 ms (FindLiveObjects: 0.078487 ms CreateObjectMapping: 0.092977 ms MarkObjects: 0.518619 ms  DeleteObjects: 0.099014 ms)
-
+  Thread -> id: 1c54 -> priority: 1 
+  Thread -> id: 2b40 -> priority: 1 
