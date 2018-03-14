@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
         SetCountText();
     }
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Wall"))
         {
@@ -23,6 +23,17 @@ public class PlayerCollision : MonoBehaviour
             SetCountText();
         }
     }
+    */
+	//for testinf purposes at the moment othe wall is destroyed when collided with and a life is taken away, The wall will not be dostoryed in the final build, This is just a test
+	void OnCollisionEnter (Collision col)
+	{
+		if(col.gameObject.name == "Wall")
+		{
+			Destroy(col.gameObject); //If collision with a wall occurs destroy the wall object
+			count = count - 1;	//remove a life
+			SetCountText(); // display new lives
+		}
+	}
 
     void SetCountText()
     {
