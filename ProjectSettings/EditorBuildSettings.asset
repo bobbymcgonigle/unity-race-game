@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/Title menu Cartoon.unity
     guid: 5df275c23eddeb345920ec7f3a7a9c2c
-  - enabled: 1
-    path: Assets/_Scenes/Title menu.unity
+  - enabled: 0
+    path: 
     guid: 15e9da8a011535347af1b9855c326f9a
-  - enabled: 1
-    path: Assets/_Scenes/MiniGame.unity
+  - enabled: 0
+    path: 
     guid: fac7cfd9440bbe64f82580d759a10cf2
