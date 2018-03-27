@@ -6,32 +6,35 @@ public class CameraController : MonoBehaviour {
 
 	public GameObject Player;
 
+    public PlayerPathFindingScript currentPath;
+
     public float height;
-    private float distance;
-	private Vector3 offset;
     private Quaternion rotation;
-    private float rotationSpeed = 0.5f;
-    private Vector3 playerPrevPos, playerMoveDir;
+    public float speed = 10;
+    private Vector3 playerPrevPos;
+    public int CurrentWayPointID = 0;
+    private float reachDistance = 1.0f;
+    public float playerDist;
 
     // Use this for initialization
     void Start () 
 	{
-		offset = transform.position - Player.transform.position;
-        distance = offset.magnitude;
         playerPrevPos = Player.transform.position;
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () 
 	{
-        playerMoveDir = Player.transform.position - playerPrevPos;
-        playerMoveDir.Normalize();
-        transform.position = Player.transform.position - playerMoveDir * distance;
-        transform.position = new Vector3(transform.position.x, height, transform.position.z);
-        transform.LookAt(Player.transform.position);
-        playerPrevPos = Player.transform.position;
-        //transform.rotation = new Quaternion(transform.rotation.z, 45, transform.rotation.y, 0);
-        //transform.LookAt(player.transform.position);
+        float distance = Vector3.Distance(currentPath.path_objs[CurrentWayPointID].position, transform.position);
+        playerDist = Vector3.Distance(Player.transform.position, transform.position);
+        if(playerDist > 15) { speed = 20; }
+        else if(playerDist < 10) { speed = 1; }
+        else { speed = 10; }
+        transform.position = Vector3.MoveTowards(transform.position, currentPath.path_objs[CurrentWayPointID].position, Time.deltaTime * speed);
 
+        transform.LookAt(Player.transform.position);
+        
+        if (distance <= reachDistance) CurrentWayPointID++;      //when current position is met, move on to next point
+        if (CurrentWayPointID >= currentPath.path_objs.Count) CurrentWayPointID = 0;
     }
 }
