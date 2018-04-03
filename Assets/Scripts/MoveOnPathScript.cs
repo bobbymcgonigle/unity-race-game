@@ -22,7 +22,7 @@ public class MoveOnPathScript : MonoBehaviour {
 	
 	
 	private Animator anim;
-
+	private Collider head;
 	
 	void Start() {
         //path = GameObject.Find(pathName).GetComponent<PlayerPathFindingScript>();
@@ -34,6 +34,7 @@ public class MoveOnPathScript : MonoBehaviour {
         pathID = 1;
         currentPath = pathlist[pathID];
 		anim = GetComponent<Animator>();
+		head = GetComponent<SphereCollider>();
     }
 	
 	void Update () {
@@ -64,10 +65,12 @@ public class MoveOnPathScript : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.C) && !crouch)
 		{
 			crouch=true;
+			head.enabled = false;
 		}
 		else if((Input.GetKeyDown(KeyCode.C) && crouch))
 		{
 			crouch = false;
+			head.enabled = true;
 		}
 		
         if (jump)

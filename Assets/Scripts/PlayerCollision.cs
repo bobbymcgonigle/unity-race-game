@@ -6,41 +6,32 @@ public class PlayerCollision : MonoBehaviour
 {
     public Text countText;
     
-    private int count;
+    public int lives;
 
     void Start()
     {
-        count = 3;
+        lives = 3;
         SetCountText();
     }
+    
 
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Wall"))
-        {
-            other.gameObject.SetActive(false);
-            count = count - 1;
-            SetCountText();
-        }
-    }
-    */
-	//for testinf purposes at the moment othe wall is destroyed when collided with and a life is taken away, The wall will not be dostoryed in the final build, This is just a test
 	void OnCollisionEnter (Collision col)
 	{
-		if(col.gameObject.name == "Wall")
+		if(col.gameObject.tag == "Wall")
 		{
 			Destroy(col.gameObject); //If collision with a wall occurs destroy the wall object
-			count = count - 1;	//remove a life
+            lives = lives - 1;	//remove a life
 			SetCountText(); // display new lives
 		}
+
 	}
 
     void SetCountText()
     {
-        countText.text = "Lives: " + count.ToString();
-        if (count <= 0)
+        countText.text = "Lives: " + lives.ToString();
+        if (lives <= 0)
         {
-            countText.text = "Game Over!";
+            countText.text = "Game Over!";  //this should cut to a gameOver screen in the final build
         }
     }
 }
