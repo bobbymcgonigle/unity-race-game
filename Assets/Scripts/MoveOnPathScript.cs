@@ -38,7 +38,10 @@ public class MoveOnPathScript : MonoBehaviour {
     }
 	
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.A))
+		
+
+
+		if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal")< 0)
         {
             if (pathID > 0)
             {
@@ -46,28 +49,30 @@ public class MoveOnPathScript : MonoBehaviour {
                 currentPath = pathlist[pathID];
             }
         }
-        if (Input.GetKeyDown(KeyCode.D))
+		if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") >0)
         {
             if (pathID < 2)
             {
                 pathID++;
                 currentPath = pathlist[pathID];
+
             }
+
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && !jump && !goDown)
+		if (Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical")> 0 && !jump && !goDown)
         {
             jump = true;
             movementID = CurrentWayPointID+1;
             if (movementID >= currentPath.path_objs.Count) movementID = 0;
 			
         }
-		if(Input.GetKeyDown(KeyCode.C) && !crouch)
+		if(Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical")< 0&& !crouch)
 		{
 			crouch=true;
 			head.enabled = false;
 		}
-		else if((Input.GetKeyDown(KeyCode.C) && crouch))
+		else if(Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical")< 0&& crouch)
 		{
 			crouch = false;
 			head.enabled = true;

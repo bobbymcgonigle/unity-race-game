@@ -8,12 +8,6 @@ public class GameOver : MonoBehaviour {
 
 	public Transform canvas;
 	
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.C))//press escape to trigger folling event
-		{
-			TriggerGameOver();
-		}
-	}
 	public void TriggerGameOver(){
 		if(canvas.gameObject.activeInHierarchy == false)// if the canvas that is being modified is not being rendered
 		{

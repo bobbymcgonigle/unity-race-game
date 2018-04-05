@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerCollision : MonoBehaviour
 {
     public Text countText;
-    
+    public GameOver GameOverMenu;
     public int lives;
 
     void Start()
@@ -13,7 +13,6 @@ public class PlayerCollision : MonoBehaviour
         lives = 3;
         SetCountText();
     }
-    
 
 	void OnCollisionEnter (Collision col)
 	{
@@ -31,7 +30,8 @@ public class PlayerCollision : MonoBehaviour
         countText.text = "Lives: " + lives.ToString();
         if (lives <= 0)
         {
-            countText.text = "Game Over!";  //this should cut to a gameOver screen in the final build
+            
+			GameOverMenu.TriggerGameOver(); //gamecontroller is refernced here and will show the game over screen 
         }
     }
 }

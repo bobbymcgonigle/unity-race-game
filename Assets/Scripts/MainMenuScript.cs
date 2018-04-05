@@ -18,7 +18,7 @@ public class MainMenuScript : MonoBehaviour {
 		setAllToFalse();
 		switchMenu(activeCanvas);
 	}
-	
+	//method for switching between the menu screens 
 	public void switchMenu(string menu){
 		
 		setAllToFalse();

@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//script for changing resolution and volume levels
 public class optionsHandler : MonoBehaviour {
 
+
+	
 	public Slider volumeSlider;
 	public Dropdown resolutionOptions;
 	public Toggle FullScreenToggle;
